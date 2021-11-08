@@ -38,7 +38,7 @@ def parse(pmcid):
                 sent.append(" ".join(chi_chi.itertext()).replace("\n","").replace("\t"," "))
   return year," ".join(sent)
 
-f = open("data/restlt_sections.txt","w")
+f = open("data/result_sections.txt","w")
 with open("pmcid_list.txt") as f2:
    for line in f2:
       pmcid = line.strip()

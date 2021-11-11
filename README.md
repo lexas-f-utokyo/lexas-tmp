@@ -45,24 +45,29 @@ We prepare seven articles as sample. If you want to run on your interest article
 
 ### 2. Sentence segmentation
 
-1. Run "2.sentence_segmentation.py" to performsentence segmentation with sci-spacy
+1. Run "2.sentence_segmentation.py" to perform sentence segmentation with sci-spacy
 2. The output file is preserved in data/
 
 ### 3. Extracting the sentences descibing gene-related experiments
 
+With experimental list and genelist from HGNC, you can retrieve sentences that include at least one gene and one method.
+
 1. Run "3.Sentence-extraction.py"
-2. 
+2. The output file
 
 ### 4. Relation extraction between gene names and experimental methods
 
-1. Run "4.Relation-extraction.py"
+Using pre-trained model based on bio-BERT, do relation extraction.
+
+1. Edit the "4.Relation-extraction.ipynb" to select if you use "cpu" or "cuda".
+2. Run "4.Relation-extraction.ipynb" to relation extraction between gene name and experimental method.
 
 
 ## Suggestion
 
 ### 5. Change the style for training a model
 
-1. Run "5..py"
+1. Run "5.py" to number the experiment.
 
 ### 6. Collect gene feature
 

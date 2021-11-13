@@ -17,14 +17,12 @@ to be analyzed and a specific experimental method for the next experiment.
 git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
 ```
 
-2. Download required data from [google drive repository]() and unzip the tar.gz files.
+2. Download required data from [google drive repository]() in the root directory and unzip the tar.gz files.
 
 ```
 wget 
 tar -zxvf 
 ```
-
-3. Before running scripts, prepair directories as follows.
 
 
 
@@ -85,34 +83,35 @@ you can obtain information about gene-related experiments.
 
 ## LEXAS Suggestion
 
-We have already prepared two pre-trained models, one use all features and the other use only databases.
-You can start from step 8.
+We have already prepared two pre-trained models, one use features from databases and knowledgebases
+and the other use only databases.
 
+If you want to try it, start from step 8.
 
-### 5. Change the style for training a model
+### 5. Number the experiments
 
-1. Run "5.py" to number the experiment for training.
+1. Run "5.py" to number the experiment for training a model.
 
-### 6. Collect gene feature
+### 6. Collect gene features
 
-To generate feature vectors, you have to prepair two dictionary.
-One is the key, another is the number.
+To generate feature vectors, you have to create two dictionary.
+One dictionary has the gene name as the keys and the associated features as the values. 
+The other dictionary has the name of the features as the keys and the number of the feature as the values.
 
-We prepare two sets of feature dictionary and number dictionary.
-Alldic, allnum is for all features, and datdic, datnum are for or only databases.
+Exceptionally, the Word2vec and DepMap features require only one dictionary.
+They require only one dictionary with the gene names as the keys,
+word vectors and cancer dependencies as the values, respectively.
 
-If you want to use your own feature, run the following step.
+1. Run "6.feature.py" to generate feature dictionaries.
 
-1. Run "6.feature.py" to generate feature dictionary.
+### 7. Training an XGBoost model that suggests next experiments.
 
-### 7. Training a suggestion model
-
-1. Run "7. XGBoost_train.ipynb"
+1. Edit "7. XGBoost_train.ipynb" and select whether you use all information sources or only databases.
+2. Run "7. XGBoost_train.ipynb"
 
 ### 8. Suggesting the gene in the next experiment
 
-1. Run "7. XGBoost_suggestion.ipynb"
-
+1. Run "8. XGBoost_suggestion.ipynb"
 
 ## License
 

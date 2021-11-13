@@ -21,12 +21,14 @@ $ git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
 Before running scripts, prepair directories as follows.
 
 
+## Depandencies
 
+- scispacy>=0.4.0
+- en_core_sci_sm>=0.4.0
+- pandas>=1.1.5
+- ahocorapy>=1.6.1
+- tqdm
 
-3. Acquire required module
-
-sci-spacy, pandas, numpy, ??, ??
-pip install ?
 
 
 ## Search

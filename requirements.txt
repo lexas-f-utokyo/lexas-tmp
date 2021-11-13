@@ -1,0 +1,6 @@
+scispacy>=0.4.0
+en_core_sci_sm>=0.4.0
+pandas>=1.1.5
+ahocorapy>=1.6.1
+tqdm
+

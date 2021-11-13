@@ -13,16 +13,16 @@ to be analyzed and a specific experimental method for the next experiment.
 
 1. Clone the source code.
 
-'''
+```
 git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
-'''
+```
 
 2. Download required data from [google drive repository]() and unzip the tar.gz files.
 
-'''
+```
 wget 
 tar -zxvf 
-'''
+```
 
 3. Before running scripts, prepair directories as follows.
 

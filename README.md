@@ -1,9 +1,8 @@
-# lexas
-LEXAS: Lifescience EXperiment seArch and Suggestion
+# LEXAS: Lifescience EXperiment seArch and Suggestion
 
 ## Introduction
 
-This repository contains the source code used to develop LEXAS system (https://lexas.f.u-tokyo.ac.jp).
+This repository contains the source code used to develop the LEXAS system (https://lexas.f.u-tokyo.ac.jp).
 
 LEXAS curates the description of biomedical experiments and suggests genes
 to be analyzed and a specific experimental method for the next experiment.
@@ -12,13 +11,21 @@ to be analyzed and a specific experimental method for the next experiment.
 
 ## Installation
 
-1. Clone.
+1. Clone the source code.
 
-$ git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
+'''
+git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
+'''
 
-2. Download pretrained model from google drive and unzip tar.gz files.////
+2. Download required data from [google drive repository]() and unzip the tar.gz files.
 
-Before running scripts, prepair directories as follows.
+'''
+wget 
+tar -zxvf 
+'''
+
+3. Before running scripts, prepair directories as follows.
+
 
 
 ## Dependencies

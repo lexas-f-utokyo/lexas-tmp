@@ -41,44 +41,49 @@ tar -zxvf
 - transformers>=4.3.3
 - xgboost>=1.4.2
 
-## Search
+## LEXAS Search
 
-This section describes how you can obtain information about gene-relaed biological experiments from PMC articles
+In this section, we describe how to get information about biological gene-related experiments from PMC articles.
 
 ### 0. Downloading PMC articles
 
-We have already prepare seven sample articles. If you want to run on your interest article, please follow the below step.
+We have prepared seven sample articles.
+If you want to get information about the experiment from the article of your interest, please follow the steps below.
 
-1. Download PMC articles of interest from PMC FTP service and put it in the articles directory.
-2. Generate a list of the PMCID in PMCID_list.txt, one ID per one line.
+1. Download PMC articles of your interest from [PMC FTP service](https://ftp.ncbi.nlm.nih.gov/pub/pmc/) and save it in the articles/.
+2. Generate a list of PMCIDs in PMCID_list.txt with one ID per line.
 
 ### 1. Extracting the result sections
 
-1. Run "1.result-extract.py" to extract only the result section except figure legends.
-2. The output file is preserved in data/
+1. Run "1.result-extract.py" to extract only the result section from articles, except the figure legends.
+2. The output file will be saved in data/result_sections.txt.
 
 ### 2. Sentence segmentation
 
-1. Run "2.sentence_segmentation.py" to perform sentence segmentation with sci-spacy.
-2. The output file is preserved in data/
+1. Run "2.sentence_segmentation.py" to perform sentence segmentation with scispacy.
+2. The output file will be saved in data/result_sections_segmentation.txt
 
 ### 3. Extracting the sentences descibing gene-related experiments
 
-With manually compiled experimental list and human gene term list provided by HGNC, you can retrieve
- sentences that include at least one gene and one method.
+Extract sentences containing at least one gene and one method using
+the manually created experiment list (data/experiment_list.txt) and the human gene term list provided by HGNC.
+
+The genes and experimental methods will be masked with special tokens "[GENE]" and "[EXPE]".
 
 1. Run "3.Sentence-extraction.py"
-2. The output file is preserved in data/
+2. The output file will be saved in data/masked_sentences.txt
 
 ### 4. Relation extraction between gene names and experimental methods
 
-Using pre-trained model based on bio-BERT, do relation extraction.
+Using a bio-BERT model trained to extract the relation between genes and experimental methods,
+you can obtain information about gene-related experiments.
 
-1. Edit the "4.Relation-extraction.ipynb" to select if you use "cpu" or "cuda".
-2. Run "4.Relation-extraction.ipynb" to extract target-manipulation relations between gene names and experimental methods in one sentence.
+1. Edit "4.Relation-extraction.ipynb" and select whether you use "[cpu]" or "[cuda]".
+2. Run "4.Relation-extraction.ipynb".
+3. The output file will be saved in data/masked_sentences_bert.txt
 
 
-## Suggestion
+## LEXAS Suggestion
 
 We have already prepared two pre-trained models, one use all features and the other use only databases.
 You can start from step 8.

@@ -3,22 +3,25 @@ LEXAS: Lifescience EXperiment seArch and Suggestion
 
 ## Introduction
 
-LEXAS helps researchers to efficiently design biological experiments.
+This repository contains the source code used to develop LEXAS system (https://lexas.f.u-tokyo.ac.jp).
 
-LEXAS curates the description of biomedical experiments (Search) and suggests genes
-to be analyzed and a specific experimental method for the next experiment (Suggestion). 
+LEXAS curates the description of biomedical experiments and suggests genes
+to be analyzed and a specific experimental method for the next experiment.
 
-## Google drive data repository
+
 
 ## Installation
 
 1. Clone.
 
-$ git clone ????
+$ git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
 
-2. Download pretrained model from google ////
+2. Download pretrained model from google drive and unzip tar.gz files.////
 
-Folder like this.
+Before running scripts, prepair directories as follows.
+
+
+
 
 3. Acquire required module
 
@@ -32,11 +35,10 @@ This section describes how you can obtain information about gene-relaed biologic
 
 ### 0. Downloading PMC articles
 
-We prepare seven articles as sample. If you want to run on your interest article, please do the below.
+We have already prepare seven sample articles. If you want to run on your interest article, please follow the below step.
 
 1. Download PMC articles of interest from PMC FTP service and put it in the articles directory.
 2. Generate a list of the PMCID in PMCID_list.txt, one ID per one line.
-
 
 ### 1. Extracting the result sections
 
@@ -45,47 +47,86 @@ We prepare seven articles as sample. If you want to run on your interest article
 
 ### 2. Sentence segmentation
 
-1. Run "2.sentence_segmentation.py" to perform sentence segmentation with sci-spacy
+1. Run "2.sentence_segmentation.py" to perform sentence segmentation with sci-spacy.
 2. The output file is preserved in data/
 
 ### 3. Extracting the sentences descibing gene-related experiments
 
-With experimental list and genelist from HGNC, you can retrieve sentences that include at least one gene and one method.
+With manually compiled experimental list and human gene term list provided by HGNC, you can retrieve
+ sentences that include at least one gene and one method.
 
 1. Run "3.Sentence-extraction.py"
-2. The output file
+2. The output file is preserved in data/
 
 ### 4. Relation extraction between gene names and experimental methods
 
 Using pre-trained model based on bio-BERT, do relation extraction.
 
 1. Edit the "4.Relation-extraction.ipynb" to select if you use "cpu" or "cuda".
-2. Run "4.Relation-extraction.ipynb" to relation extraction between gene name and experimental method.
+2. Run "4.Relation-extraction.ipynb" to extract target-manipulation relations between gene names and experimental methods in one sentence.
 
 
 ## Suggestion
 
+We have already prepared two pre-trained models, one use all features and the other use only databases.
+You can start from step 8.
+
+
 ### 5. Change the style for training a model
 
-1. Run "5.py" to number the experiment.
+1. Run "5.py" to number the experiment for training.
 
 ### 6. Collect gene feature
 
-To generate feature vector, we have to prepair two dictionary.
+To generate feature vectors, you have to prepair two dictionary.
 One is the key, another is the number.
 
-1. Run "6.feature.py"
+We prepare two sets of feature dictionary and number dictionary.
+Alldic, allnum is for all features, and datdic, datnum are for or only databases.
+
+If you want to use your own feature, run the following step.
+
+1. Run "6.feature.py" to generate feature dictionary.
 
 ### 7. Training a suggestion model
 
-1. Run "6. py"
+1. Run "7. XGBoost_train.ipynb"
 
 ### 8. Suggesting the gene in the next experiment
 
-1.result-extract.py #XML  
-2.Parsing.py #scispacy  
-3.chikan.py #ahocorapy  
-4.relation_extraction.py  #biobert  
-5.feature.py  
-6.XGboost.py  
-7.app.py #flask & template htmls  
+1. Run "7. XGBoost_suggestion.ipynb"
+
+
+## License
+
+This source code may be used for non-commercial purpose including. 
+
+- Research by academic institutions
+
+- Non-commercial research, including research conducted within commercial organizations
+
+- Personal use, including blog posts.
+
+If you want to use the source code for a commercial purpose, please contact the following email addresses.
+
+Miho Sakao : sakao [at_mark] todaitlo.jp
+
+
+
+## Acknowledgement
+
+LEXAS relies on many information sources:
+
+[PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/)
+[HGNC](https://www.genenames.org/)
+[GO](http://geneontology.org/)
+[MGI](http://www.informatics.jax.org/)
+[HPO](https://hpo.jax.org/app/)
+[OMIM](https://www.omim.org/)
+[Orphanet](https://www.orpha.net/)
+[HPA](https://www.proteinatlas.org/)
+[BioGRID](https://thebiogrid.org/)
+[DepMap](https://depmap.org/)
+[ENCODE](https://www.encodeproject.org/)
+
+We gratefully acknowledge these resources.

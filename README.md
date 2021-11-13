@@ -21,15 +21,18 @@ $ git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
 Before running scripts, prepair directories as follows.
 
 
-## Depandencies
-
-- scispacy>=0.4.0
-- en_core_sci_sm>=0.4.0
-- pandas>=1.1.5
+## Dependencies
 - ahocorapy>=1.6.1
-- tqdm
-
-
+- en_core_sci_sm>=0.4.0
+- numpy>=1.19.5
+- pandas>=1.1.5
+- scipy>=1.5.4
+- scispacy>=0.4.0
+- shap>=0.39.0
+- torch>=1.9.1
+- tqdm>=4.61.1
+- transformers>=4.3.3
+- xgboost>=1.4.2
 
 ## Search
 

@@ -80,13 +80,14 @@ you can obtain information about gene-related experiments.
 2. Run "4.Relation-extraction.ipynb".
 3. The output file will be saved in data/masked_sentences_bert.txt
 
+If you want to train a new relation extraction model, run "Relation-extraction-train.ipynb".
 
 ## LEXAS Suggestion
 
 We have already prepared two pre-trained models, one use features from databases and knowledgebases
 and the other use only databases.
 
-If you want to try it, start from step 8.
+If you want to use the pre-trained models, start from step 8.
 
 ### 5. Number the experiments
 

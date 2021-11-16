@@ -20,10 +20,9 @@ git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
 2. Download required data from [google drive repository]() in the root directory and unzip the tar.gz files.
 
 ```
-wget 
-tar -zxvf 
+wget https://drive.google.com/file/d/15hQMmr4cCejZj5HR2q03ieu1Q6pjVwjI/view?usp=sharing
+tar -zxvf Repository.tar.gz
 ```
-
 
 
 ## Dependencies
@@ -134,16 +133,16 @@ Miho Sakao : sakao [at_mark] todaitlo.jp
 
 LEXAS relies on many information sources:
 
-[PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/)
-[HGNC](https://www.genenames.org/)
-[GO](http://geneontology.org/)
-[MGI](http://www.informatics.jax.org/)
-[HPO](https://hpo.jax.org/app/)
-[OMIM](https://www.omim.org/)
-[Orphanet](https://www.orpha.net/)
-[HPA](https://www.proteinatlas.org/)
-[BioGRID](https://thebiogrid.org/)
-[DepMap](https://depmap.org/)
-[ENCODE](https://www.encodeproject.org/)
+- [PubMed Central](https://www.ncbi.nlm.nih.gov/pmc/)
+- [HGNC](https://www.genenames.org/)
+- [GO](http://geneontology.org/)
+- [MGI](http://www.informatics.jax.org/)
+- [HPO](https://hpo.jax.org/app/)
+- [OMIM](https://www.omim.org/)
+- [Orphanet](https://www.orpha.net/)
+- [HPA](https://www.proteinatlas.org/)
+- [BioGRID](https://thebiogrid.org/)
+- [DepMap](https://depmap.org/)
+- [ENCODE](https://www.encodeproject.org/)
 
 We gratefully acknowledge these resources.

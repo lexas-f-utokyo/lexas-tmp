@@ -17,10 +17,9 @@ to be analyzed and a specific experimental method for the next experiment.
 git clone https://github.com/lexas-f-utokyo/lexas-tmp.git
 ```
 
-2. Download required data from google drive repository in the root directory and unzip the tar.gz files.
+2. Download required data from [google drive repository](https://drive.google.com/file/d/15hQMmr4cCejZj5HR2q03ieu1Q6pjVwjI/view?usp=sharing) in the root directory and unzip the tar.gz files.
 
 ```
-wget --no-check-certificate　"https://drive.google.com/uc?export=download&id=15hQMmr4cCejZj5HR2q03ieu1Q6pjVwjI"
 tar -zxvf Repository.tar.gz
 ```
 

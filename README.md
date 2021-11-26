@@ -46,7 +46,7 @@ In this section, we describe how to get information about biological gene-relate
 We have prepared seven sample articles.
 If you want to get information about the experiment from the article of your interest, please follow the steps below.
 
-1. Download PMC articles of your interest from [PMC FTP service](https://ftp.ncbi.nlm.nih.gov/pub/pmc/) and save it in the articles/.
+1. Download PMC articles of your interest from the [PMC FTP service](https://ftp.ncbi.nlm.nih.gov/pub/pmc/) and save them in the articles/.
 2. Generate a list of PMCIDs in PMCID_list.txt with one ID per line.
 
 ### 1. Extracting the result sections
@@ -59,7 +59,7 @@ If you want to get information about the experiment from the article of your int
 1. Run "2.sentence_segmentation.py" to perform sentence segmentation with scispacy.
 2. The output file will be saved in data/result_sections_segmentation.txt
 
-### 3. Extracting the sentences descibing gene-related experiments
+### 3. Extracting the sentences describing gene-related experiments
 
 Extract sentences containing at least one gene and one method using
 the manually created experiment list (data/experiment_list.txt) and the human gene term list provided by HGNC.
@@ -82,8 +82,8 @@ If you want to train a new relation extraction model, run "Relation-extraction-t
 
 ## LEXAS Suggestion
 
-We have already prepared two pre-trained models, one use features from databases and knowledgebases
-and the other use only databases.
+We have already prepared two pre-trained models, one uses features from databases and knowledgebases
+and the other uses only databases.
 
 If you want to use the pre-trained models, start from step 8.
 
@@ -93,7 +93,7 @@ If you want to use the pre-trained models, start from step 8.
 
 ### 6. Collect gene features
 
-To generate feature vectors, you have to create two dictionary.
+To generate feature vectors, you have to create two dictionaries.
 One dictionary has the gene name as the keys and the associated features as the values. 
 The other dictionary has the name of the features as the keys and the number of the feature as the values.
 
@@ -114,7 +114,7 @@ word vectors and cancer dependencies as the values, respectively.
 
 ## License
 
-This source code may be used for non-commercial purpose including. 
+This source code may be used for non-commercial purposes including. 
 
 - Research by academic institutions
 
@@ -128,7 +128,7 @@ Miho Sakao : sakao [at_mark] todaitlo.jp
 
 
 
-## Acknowledgement
+## Acknowledgment
 
 LEXAS relies on many information sources:
 
